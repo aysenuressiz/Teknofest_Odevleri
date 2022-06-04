@@ -71,7 +71,7 @@ namespace teknofest_ödevleri
             label2.Text = "";
             label7.Text = "";
             button9.Enabled = true;
-            pictureBox1.Location = new Point(1, 55);
+            pictureBox1.Location = new Point(0, 0);
             foreach (var series in chart1.Series)
             {
                 series.Points.Clear();
