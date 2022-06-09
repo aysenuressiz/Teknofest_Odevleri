@@ -24,7 +24,7 @@ namespace teknofest_ödevleri
         
         private void button4_Click(object sender, EventArgs e)
         {
-
+            timer2.Start();
             a = Convert.ToInt32(textBox1.Text);
             b = Convert.ToInt32(textBox2.Text);
             sonuc = a - b;
@@ -34,7 +34,7 @@ namespace teknofest_ödevleri
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            timer2.Start();
             a = Convert.ToInt32(textBox1.Text);
             b = Convert.ToInt32(textBox2.Text);
             sonuc = a * b;
@@ -44,7 +44,7 @@ namespace teknofest_ödevleri
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            timer2.Start();
             a = Convert.ToInt32(textBox1.Text);
             b = Convert.ToInt32(textBox2.Text);
 
@@ -61,7 +61,10 @@ namespace teknofest_ödevleri
             }
             chart1.Series["SONUÇLAR"].Points.Add(sonuc);
         }
-
+        try
+        {}
+        catch
+        {}
         private void button5_Click(object sender, EventArgs e)
         {
             textBox1.Text = "";
@@ -148,6 +151,16 @@ namespace teknofest_ödevleri
             timer1.Stop();
         }
 
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            
+            for(int s = 0; s < 5; s++)
+            {
+                chart1.Series["SONUÇLAR"].Points.Add(sonuc);
+                if (s == 4)
+                    timer2.Stop();            }
+        }
+
         private void button9_Click(object sender, EventArgs e)
         {
 
@@ -184,6 +197,7 @@ namespace teknofest_ödevleri
 
         private void button1_Click(object sender, EventArgs e)
         {
+            timer2.Start();
             a = Convert.ToInt32(textBox1.Text);
             b = Convert.ToInt32(textBox2.Text);
             sonuc = a + b;
